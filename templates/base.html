@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bs/bootstrap.min.css'%}">
+    <script src="{% static 'bs/bootstrap.min.js'%}"></script>
+    {% block styles %}
+    {% endblock %}
+    <style>
+        .banner {
+            background-color: skyblue;
+            
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="banner py-5">
+        <div class="banner-text  text-center">
+            <span class="display-2 fw-light shadow  rounded p-3 text-primary ">TODO</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcontent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navcontent">
+                <ul class="navbar-nav ms-auto">
+                    {% block link %}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Help</a>
+                    </li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'bs/jquery.min.js' %}"></script>
+</body>
+
+</html>

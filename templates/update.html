@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card my-2 shadow shadow-lg p-2 ">
+        <div class="card-body text-white bg-danger">
+            <h4 class="card-title">Task Update<span class="date lead bg-light text-dark ">{{i.date}}</span></h4>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{form.name}}
+                    {{form.errors}}
+                </div>
+                <div class=" my-2">
+                    {{form.priority}}
+                    {{form.errors}}
+                </div>
+                <div class=" my-2">
+                    {{form.date}}
+                    {{form.errors}}
+                </div>
+                <div class="my-4 d-flex justify-content-center">
+                    <input type="submit" class="btn btn-light px-4  fs-4 " value="Change">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

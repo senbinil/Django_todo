@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Task{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class=" p-5 w-50">
+        <form method="post">
+            {% csrf_token %}
+            {%csrf_token%}
+            <div>
+                {{form.name}}
+                {{form.errors}}
+            </div>
+            <div class=" my-2">
+                {{form.priority}}
+                {{form.errors}}
+            </div>
+            <div class=" my-2">
+                {{form.date}}
+                {{form.errors}}
+            </div>
+            <div class="my-4 d-flex justify-content-center">
+                <input type="submit" class="btn btn-danger px-4  fs-4 " value="Change">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

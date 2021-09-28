@@ -1,0 +1,16 @@
+input{
+    text-align: center;
+}
+.left{
+    background-color: skyblue;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+.right{
+    height: 800px !important;
+    overflow:auto;
+}
+.date{
+    float: right;
+    margin-left: auto;
+}
